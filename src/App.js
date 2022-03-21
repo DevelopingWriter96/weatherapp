@@ -46,7 +46,11 @@ function App() {
       const resp = await fetch('http://api.openweathermap.org/geo/1.0/direct?q=Tokyo&appid=2e71c8fc353c994493d1f4bd9575e4b1');
       const data = await resp.json()
 
-      console.log(data)
+      console.log(data);
+
+      const dataArray = data.toString.split(',');
+
+      console.log(dataArray)
 
       setCoordinates(data)
     }
