@@ -39,7 +39,7 @@ function Weather({city, temperature}) {
 
 function App() {
 
-  const [coordinates, setCoordinates] = useState([]);
+  let [coordinates, setCoordinates] = useState([]);
 
   useEffect(() => {
     async function getCoordinates(){
@@ -55,7 +55,7 @@ function App() {
 
   }, [])
 
-  const [weather, setWeather] = useState([]);
+  let [weather, setWeather] = useState([]);
 
   useEffect(() => {
     async function getWeather(){
