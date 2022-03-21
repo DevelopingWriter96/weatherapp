@@ -55,7 +55,7 @@ function App() {
 
   }, [])
 
-  let [weather, setWeather] = useState([]);
+  const [weather, setWeather] = useState([]);
 
   useEffect(() => {
     async function getWeather(){
@@ -65,6 +65,7 @@ function App() {
       console.log(data2)
 
       setWeather(data2)
+
     } 
 
     getWeather()
