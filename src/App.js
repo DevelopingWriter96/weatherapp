@@ -73,7 +73,7 @@ function App() {
 
   return (
     <div className="App">
-    {weather.map = (weather => (
+    {weather = (weather => (
       <Weather city='Tokyo' temperature={weather.daily.temp.day} />
       ))}
     </div>    
