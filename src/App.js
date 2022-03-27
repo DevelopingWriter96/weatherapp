@@ -1,59 +1,44 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 
+let city = "";
+
 function Forecast(city, current, sunday, monday, tuesday, wednesday, thursday, friday, saturday){
+  return (
   <>
     <header>
       <h1>What is the weather like in Utah?</h1>
     </header>
     <main>
     <form>
-      <input type="text" placeholder="What city do you want?" />
+      <input type="text" placeholder="What city do you want?" class="location"/>
       <button>Get Weather!</button>
-      <button>Change Temperature unit</button>
     </form>
-    <h2>The Weather in, {city} Utah</h2>
-    <h3>Currently: {current}</h3>
+    <h2>The Weather in, Orem Utah</h2>
+    <h3>Currently: 77°F</h3>
     <h4>7-day Forecast</h4>
-        <h5>Sunday: {sunday}</h5>
-        <h5>Monday: {monday}</h5>
-        <h5>Tuesday: {tuesday}</h5>
-        <h5>Wednesday: {wednesday}</h5>
-        <h5>Thursday: {thursday}</h5>
-        <h5>Friday: {friday}</h5>
-        <h5>Saturday: {saturday}</h5>
+        <h5>Sunday: 71°F</h5>
+        <h5>Monday: 71°F</h5>
+        <h5>Tuesday: 71°F</h5>
+        <h5>Wednesday: 71°F</h5>
+        <h5>Thursday: 71°F</h5>
+        <h5>Friday: 71°F</h5>
+        <h5>Saturday: 71°F</h5>
   </main>
   <footer>
     Page created by Richard Stacey
   </footer>
   </>
-
+  )
 }
 
-function City() {
-  const [coordinates, setCoordinates] = useState([]);
+function App() {
 
-  useEffect(() => {
-    async function getCoordinates(){
-      const resp = await fetch('http://api.openweathermap.org/geo/1.0/direct?q=Tokyo&appid=2e71c8fc353c994493d1f4bd9575e4b1');
-      const data = await resp.json()
-
-      console.log(data)
-
-      setCoordinates(data)
-    }
-
-    getCoordinates()
-
-  }, [])
-}
-
-function Weather() {
   const [weather, setWeather] = useState([]);
 
   useEffect(() => {
     async function getWeather(){
-      const resp2 = await fetch('https://api.openweathermap.org/data/2.5/onecall?lat=35.652832&lon=139.839478&appid=2e71c8fc353c994493d1f4bd9575e4b1');
+      const resp2 = await fetch('https://api.openweathermap.org/data/2.5/onecall?lat=40.296898&lon=-111.694649&appid=2e71c8fc353c994493d1f4bd9575e4b1');
       const data2 = await resp2.json()
 
       console.log(data2)
@@ -64,16 +49,12 @@ function Weather() {
     getWeather()
 
   }, [])
-}
-
-function App() {
-
-  City()
-
-  Weather()
 
   return (
-  
+    <div>
+      <Forecast />
+    </div>
+    
   );
 }
 
