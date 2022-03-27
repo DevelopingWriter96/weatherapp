@@ -1,7 +1,47 @@
 import './App.css';
-import { useEffect, useCase } from 'react';
+import { useEffect, useState } from 'react';
+
+function City() {
+  const [coordinates, setCoordinates] = useState([]);
+
+  useEffect(() => {
+    async function getCoordinates(){
+      const resp = await fetch('http://api.openweathermap.org/geo/1.0/direct?q=Tokyo&appid=2e71c8fc353c994493d1f4bd9575e4b1');
+      const data = await resp.json()
+
+      console.log(data)
+
+      setCoordinates(data)
+    }
+
+    getCoordinates()
+
+  }, [])
+}
+
+function Weather() {
+  const [weather, setWeather] = useState([]);
+
+  useEffect(() => {
+    async function getWeather(){
+      const resp2 = await fetch('https://api.openweathermap.org/data/2.5/onecall?lat=35.652832&lon=139.839478&appid=2e71c8fc353c994493d1f4bd9575e4b1');
+      const data2 = await resp2.json()
+
+      console.log(data2)
+
+      setWeather(data2)
+    } 
+
+    getWeather()
+
+  }, [])
+}
 
 function App() {
+
+  City()
+
+  Weather()
 
   return (
   <>
