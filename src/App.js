@@ -1,6 +1,35 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 
+function Forecast(city, current, sunday, monday, tuesday, wednesday, thursday, friday, saturday){
+  <>
+    <header>
+      <h1>What is the weather like in Utah?</h1>
+    </header>
+    <main>
+    <form>
+      <input type="text" placeholder="What city do you want?" />
+      <button>Get Weather!</button>
+      <button>Change Temperature unit</button>
+    </form>
+    <h2>The Weather in, {city} Utah</h2>
+    <h3>Currently: {current}</h3>
+    <h4>7-day Forecast</h4>
+        <h5>Sunday: {sunday}</h5>
+        <h5>Monday: {monday}</h5>
+        <h5>Tuesday: {tuesday}</h5>
+        <h5>Wednesday: {wednesday}</h5>
+        <h5>Thursday: {thursday}</h5>
+        <h5>Friday: {friday}</h5>
+        <h5>Saturday: {saturday}</h5>
+  </main>
+  <footer>
+    Page created by Richard Stacey
+  </footer>
+  </>
+
+}
+
 function City() {
   const [coordinates, setCoordinates] = useState([]);
 
@@ -44,31 +73,7 @@ function App() {
   Weather()
 
   return (
-  <>
-    <header>
-      <h1>What is the weather like in Utah?</h1>
-    </header>
-    <main>
-    <form>
-      <input type="text" placeholder="What city do you want?" />
-      <button>Get Weather!</button>
-      <button>Change Temperature unit</button>
-    </form>
-    <h2>The Weather in , Utah</h2>
-    <h3>Currently: </h3>
-    <h4>7-day Forecast</h4>
-        <h5>Sunday: </h5>
-        <h5>Monday: </h5>
-        <h5>Tuesday: </h5>
-        <h5>Wednesday: </h5>
-        <h5>Thursday: </h5>
-        <h5>Friday: </h5>
-        <h5>Saturday: </h5>
-  </main>
-  <footer>
-    Page created by Richard Stacey
-  </footer>
-  </>
+  
   );
 }
 
