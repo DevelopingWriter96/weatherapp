@@ -1,7 +1,7 @@
 import './App.css';
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 
-let city = "";
+// let city = "";
 
 function Forecast(city, current, sunday, monday, tuesday, wednesday, thursday, friday, saturday){
   return (
@@ -11,19 +11,19 @@ function Forecast(city, current, sunday, monday, tuesday, wednesday, thursday, f
     </header>
     <main>
     <form>
-      <input type="text" placeholder="What city do you want?" class="location"/>
+      <input type="text" placeholder="What city do you want?" className="location"/>
       <button>Get Weather!</button>
     </form>
     <h2>The Weather in, Orem Utah</h2>
     <h3>Currently: 77°F</h3>
     <h4>7-day Forecast</h4>
-        <h5>Sunday: 71°F</h5>
-        <h5>Monday: 71°F</h5>
-        <h5>Tuesday: 71°F</h5>
-        <h5>Wednesday: 71°F</h5>
-        <h5>Thursday: 71°F</h5>
-        <h5>Friday: 71°F</h5>
-        <h5>Saturday: 71°F</h5>
+        <h5>Sunday: 63°F</h5>
+        <h5>Monday: 63°F</h5>
+        <h5>Tuesday: 53°F</h5>
+        <h5>Wednesday: 58°F</h5>
+        <h5>Thursday: 51°F</h5>
+        <h5>Friday: 54°F</h5>
+        <h5>Saturday: 61°F</h5>
   </main>
   <footer>
     Page created by Richard Stacey
@@ -34,21 +34,21 @@ function Forecast(city, current, sunday, monday, tuesday, wednesday, thursday, f
 
 function App() {
 
-  const [weather, setWeather] = useState([]);
+  // const [weather, setWeather] = useState([]);
 
-  useEffect(() => {
-    async function getWeather(){
-      const resp2 = await fetch('https://api.openweathermap.org/data/2.5/onecall?lat=40.296898&lon=-111.694649&appid=2e71c8fc353c994493d1f4bd9575e4b1');
-      const data2 = await resp2.json()
+  // useEffect(() => {
+  //   async function getWeather(){
+  //     const resp2 = await fetch('https://api.openweathermap.org/data/2.5/onecall?lat=40.296898&lon=-111.694649&appid=2e71c8fc353c994493d1f4bd9575e4b1');
+  //     const data2 = await resp2.json()
 
-      console.log(data2)
+  //     console.log(data2)
 
-      setWeather(data2)
-    } 
+  //     setWeather(data2)
+  //   } 
 
-    getWeather()
+  //   getWeather()
 
-  }, [])
+  // }, [])
 
   return (
     <div>
